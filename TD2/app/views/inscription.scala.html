@@ -1,0 +1,14 @@
+@()
+
+<html>
+    @helper.form( action = routes.HomeController.resume()){
+    <h1>Inscription</h1>
+    
+    <input name="nom" placeholder="Nom"/>
+    <input name="age" placeholder="Age"/>
+    <input name="adresse" placeholder="Adresse"/>
+    <input name="codePostal" placeholder="Code Postal"/>
+    <input name="ville" placeholder="Ville"/>
+    <input type="submit" value="submit"/>
+    }
+</html>
