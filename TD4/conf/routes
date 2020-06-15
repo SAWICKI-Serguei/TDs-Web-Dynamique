@@ -1,0 +1,42 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+#GET     /                                   controllers.HomeController.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+##############################  MES ROUTES  ############################
+
+GET     /sayhello                           controllers.HomeController.sayhello()
+
+
+GET     /helloworld                         controllers.HomeController.helloworld(fname:String ?="toto")
+
+
+GET     /sayhelloform                       controllers.HomeController.sayhelloform(request : Request)
+POST    /helloworldform                     controllers.HomeController.helloworldform(request : Request)
+
+
+
+# Affiche TOUTES les personnes dans la database
+GET     /                           controllers.HomeController.all()
+
+
+# Affiche une personne dans la database
+GET     /show/:id                       controllers.HomeController.show(id: Long)
+
+
+# Affiche une personne dans la database
+GET     /update/:id                     controllers.HomeController.update(id: Long, request : Request)
+
+# Mise à jour de la route /update
+POST    /updateform/:id                 controllers.HomeController.updateform(id: Long, request : Request)
+
+
+# Efface une personne de la database
+POST    /delete/:id                     controllers.HomeController.delete(id: Long)
+
+
