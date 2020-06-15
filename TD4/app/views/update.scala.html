@@ -1,0 +1,21 @@
+@(pform : Form[Person], id : Long)(implicit request : play.mvc.Http.Request, messages : play.i18n.Messages)
+
+@main("Mise à jour des informations") {
+
+       
+    @main("Mise à jour des informations"){
+
+        @helper.form(action = routes.HomeController.updateform(id)){
+
+        @helper.CSRF.formField
+        @helper.inputText(pform("Nom"),'_showConstraints -> false)
+      
+@helper.input(pform("Age"),'_showConstraints -> false) {(id, name, value, args) => 
+<input type="number" name="@name" id="@id" value="@value" @toHtmlArgs(args)>
+            }
+
+    <input type=submit value="ajouter"/>
+        }
+    }
+
+}
