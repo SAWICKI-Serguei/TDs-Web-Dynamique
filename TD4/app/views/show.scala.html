@@ -1,9 +1,0 @@
-@*
- * Afficher des informations sur une seule personne
- *@
-
-@(p: Person)
-@main("Montrez vos info") {
-        <p><a href=@routes.HomeController.update(p.id) title="Clique pour mettre à jour">@p.firstname</a> @p.age years old</p>
-        <p><a href=@routes.HomeController.all>All</a></p>
-}
